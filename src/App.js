@@ -1,18 +1,12 @@
-import { createBrowserRouter, RouterProvider,  } from "react-router-dom";
-import Login from './components/Login';
-import Browse from './components/Browse';
-function App() {
-  
-const netflix_router = createBrowserRouter([
-  {path:'/', element:<Login/>},
-  {path:'/browse', element:<Browse/>}
-])
+import { Provider } from "react-redux";
+import Body from "./components/Body";
+import appStore from './utils/appStore';
 
+const App = ()=>{
   return (
-    <div>
-       <RouterProvider router={netflix_router} />
-    </div>
+    <Provider store={appStore} >
+       <Body />
+    </Provider>
   );
 }
-
 export default App;
